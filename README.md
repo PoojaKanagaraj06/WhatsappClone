@@ -1,14 +1,14 @@
 # WhatsApp Web Clone (MERN + Socket.IO)
 
-## Project Overview
+A simple real-time one-to-one chat application inspired by WhatsApp Web.
 
-This is a simplified WhatsApp Web clone built using the MERN stack and Socket.IO.
-It allows users to chat in real-time with message persistence and a clean user interface.
+## Tech Stack
 
----
+- Frontend: React, Tailwind CSS, Axios, React Router, Socket.IO Client, Vite
+- Backend: Node.js, Express, Mongoose, Socket.IO
+- Database: MongoDB
 
-## Features
-
+## Features Implemented
 * Real-time messaging using Socket.IO
 * Simple username-based login
 * Multiple users support
@@ -20,81 +20,101 @@ It allows users to chat in real-time with message persistence and a clean user i
 * Prevent sending empty messages
 * Clean WhatsApp-style UI
 
----
+## Folder Structure
 
-## Tech Stack
+```text
+whatsapp-clone/
+├─ backend/
+│  ├─ src/
+│  │  ├─ config/
+│  │  ├─ controllers/
+│  │  ├─ models/
+│  │  ├─ routes/
+│  │  ├─ sockets/
+│  │  └─ server.js
+│  ├─ .env
+│  ├─ .env.example
+│  └─ package.json
+├─ frontend/
+│  ├─ src/
+│  │  ├─ components/
+│  │  ├─ pages/
+│  │  ├─ services/
+│  │  ├─ socket/
+│  │  ├─ App.jsx
+│  │  └─ main.jsx
+│  └─ package.json
+└─ README.md
+```
 
-### Frontend
+## Backend Environment Variables
 
-* React.js
-* Tailwind CSS
-* Axios
-* React Router
-* Socket.IO Client
+Create `backend/.env`:
 
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB (Mongoose)
-* Socket.IO
-
----
-
-## Project Structure
-
-WhatsappClone/
-├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   ├── config/
-│   └── server.js
-├── frontend/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   ├── socket/
-│   └── App.jsx
-├── screenshots/
-├── README.md
-└── .gitignore
-
----
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/whatsapp_clone
+```
 
 ## Setup Instructions
 
-### Clone Repository
+### 1) Clone and open project
 
-git clone https://github.com/PoojaKanagaraj06/WhatsappClone.git
-cd WhatsappClone
+```bash
+git clone <your-repo-url>
+cd whatsapp-clone
+```
 
----
+### 2) Install backend dependencies
 
-### Backend Setup
-
+```bash
 cd backend
 npm install
-npm start
+```
 
----
+### 3) Install frontend dependencies
 
-### Frontend Setup
-
-cd frontend
+```bash
+cd ../frontend
 npm install
+```
+
+## Run Locally
+
+Open two terminals:
+
+### Terminal 1 (Backend)
+
+```bash
+cd backend
 npm run dev
+```
 
----
+### Terminal 2 (Frontend)
 
-## Environment Variables
+```bash
+cd frontend
+npm run dev
+```
 
-Create a `.env` file inside the backend folder:
+Frontend runs on Vite default port and talks to backend at `http://localhost:5000`.
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
+## API Overview
 
----
+- `POST /api/users` -> create-or-get user by username
+- `GET /api/users` -> list all users
+- `POST /api/messages` -> send a message
+- `GET /api/messages/:user1/:user2` -> fetch chat history between two users
+
+## Real-Time Events
+
+- Client emits: `send_message`
+- Server broadcasts: `receive_message`
+
+## Notes
+
+- This version intentionally keeps architecture simple and clean.
+- Authentication, rooms, delivery/read receipts, and typing indicators are not included.
 
 ## Screenshots
 
@@ -109,8 +129,6 @@ MONGO_URI=your_mongodb_connection_string
 1. Open the app in two browser tabs
 2. Login as two different users
 3. Send messages
-
-Messages should appear instantly without refresh
 
 ---
 
