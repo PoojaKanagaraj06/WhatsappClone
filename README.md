@@ -1,115 +1,102 @@
 # WhatsApp Web Clone (MERN + Socket.IO)
 
-A simple real-time one-to-one chat application inspired by WhatsApp Web.
+## Project Overview
+
+This is a simplified WhatsApp Web clone built using the MERN stack and Socket.IO.
+It allows users to chat in real-time with message persistence and a clean user interface.
+
+---
+
+## Features
+
+* Real-time messaging using Socket.IO
+* Simple username-based login
+* Multiple users support
+* Search and add contacts
+* One-to-one chat system
+* Message persistence (MongoDB)
+* Chat switching between users
+* Auto-scroll to latest message
+* Prevent sending empty messages
+* Clean WhatsApp-style UI
+
+---
 
 ## Tech Stack
 
-- Frontend: React, Tailwind CSS, Axios, React Router, Socket.IO Client, Vite
-- Backend: Node.js, Express, Mongoose, Socket.IO
-- Database: MongoDB
+### Frontend
 
-## Features Implemented
+* React.js
+* Tailwind CSS
+* Axios
+* React Router
+* Socket.IO Client
 
-- Username-based user creation (no auth for this version)
-- User list rendering in chat sidebar
-- One-to-one chat history API
-- Send message API with MongoDB persistence
-- Real-time message updates using Socket.IO
-- WhatsApp-like responsive split layout (chat list + chat window)
-- Messages persist after refresh (loaded from MongoDB)
+### Backend
 
-## Folder Structure
+* Node.js
+* Express.js
+* MongoDB (Mongoose)
+* Socket.IO
 
-```text
-whatsapp-clone/
-├─ backend/
-│  ├─ src/
-│  │  ├─ config/
-│  │  ├─ controllers/
-│  │  ├─ models/
-│  │  ├─ routes/
-│  │  ├─ sockets/
-│  │  └─ server.js
-│  ├─ .env
-│  ├─ .env.example
-│  └─ package.json
-├─ frontend/
-│  ├─ src/
-│  │  ├─ components/
-│  │  ├─ pages/
-│  │  ├─ services/
-│  │  ├─ socket/
-│  │  ├─ App.jsx
-│  │  └─ main.jsx
-│  └─ package.json
-└─ README.md
-```
+---
 
-## Backend Environment Variables
+## Project Structure
 
-Create `backend/.env`:
+WhatsappClone/
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   ├── config/
+│   └── server.js
+├── frontend/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── socket/
+│   └── App.jsx
+├── screenshots/
+├── README.md
+└── .gitignore
 
-```env
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/whatsapp_clone
-```
+---
 
 ## Setup Instructions
 
-### 1) Clone and open project
+### Clone Repository
 
-```bash
-git clone <your-repo-url>
-cd whatsapp-clone
-```
+git clone https://github.com/PoojaKanagaraj06/WhatsappClone.git
+cd WhatsappClone
 
-### 2) Install backend dependencies
+---
 
-```bash
+### Backend Setup
+
 cd backend
 npm install
-```
+npm start
 
-### 3) Install frontend dependencies
+---
 
-```bash
-cd ../frontend
-npm install
-```
+### Frontend Setup
 
-## Run Locally
-
-Open two terminals:
-
-### Terminal 1 (Backend)
-
-```bash
-cd backend
-npm run dev
-```
-
-### Terminal 2 (Frontend)
-
-```bash
 cd frontend
+npm install
 npm run dev
-```
 
-Frontend runs on Vite default port and talks to backend at `http://localhost:5000`.
+---
 
-## API Overview
+## Environment Variables
 
-- `POST /api/users` -> create-or-get user by username
-- `GET /api/users` -> list all users
-- `POST /api/messages` -> send a message
-- `GET /api/messages/:user1/:user2` -> fetch chat history between two users
+Create a `.env` file inside the backend folder:
 
-## Real-Time Events
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
 
-- Client emits: `send_message`
-- Server broadcasts: `receive_message`
+---
 
-## Appication Screenshots
+## Screenshots
 
 <img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/2d1d1d1f-617a-431d-b5fc-ca9c06c14aff" />
 <img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/75045084-c538-4aab-bf8b-55ccc1937e67" />
@@ -117,6 +104,20 @@ Frontend runs on Vite default port and talks to backend at `http://localhost:500
 <img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/f3ce2ae6-ea13-4b28-be36-5727a6de7e90" />
 <img width="1919" height="900" alt="image" src="https://github.com/user-attachments/assets/41528829-09e1-492b-9dff-b43dcd7ccbc7" />
 
+## How to Test
+
+1. Open the app in two browser tabs
+2. Login as two different users
+3. Send messages
+
+Messages should appear instantly without refresh
+
+---
+
+## Author
+
+Pooja Kanagaraj
+https://github.com/PoojaKanagaraj06
 
 
 
