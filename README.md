@@ -109,15 +109,15 @@ Frontend runs on Vite default port and talks to backend at `http://localhost:500
 - Client emits: `send_message`
 - Server broadcasts: `receive_message`
 
-## Optional Screenshots
+## Appication Screenshots
 
-Add screenshots here:
+<img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/2d1d1d1f-617a-431d-b5fc-ca9c06c14aff" />
+<img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/75045084-c538-4aab-bf8b-55ccc1937e67" />
+<img width="1919" height="903" alt="image" src="https://github.com/user-attachments/assets/b254e428-1217-49cf-9fb0-786a7299cee3" />
+<img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/f3ce2ae6-ea13-4b28-be36-5727a6de7e90" />
+<img width="1919" height="900" alt="image" src="https://github.com/user-attachments/assets/41528829-09e1-492b-9dff-b43dcd7ccbc7" />
 
-- Chat list panel
-- Chat window with sent/received bubbles
-- Real-time update demo
 
-## Notes
 
-- This version intentionally keeps architecture simple and clean.
-- Authentication, rooms, delivery/read receipts, and typing indicators are not included.
+
+
